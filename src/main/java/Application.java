@@ -17,7 +17,7 @@ public class Application {
 
     public static void main(String[] args) {
         port(getHerokuAssignedPort());
-        get("/", (req, res) -> "Hi Heroku!");
+        get("/", (req, res) -> "Hi Heroku 20!");
         workWithDatabase();
     }
 
@@ -25,7 +25,7 @@ public class Application {
 
     private static void workWithDatabase(){
         try (Connection conn = getConnection()) {
-            String sql = "";
+            String sql;
 
             if ("SQLite".equalsIgnoreCase(conn.getMetaData().getDatabaseProductName())) {
                 sql = "CREATE TABLE IF NOT EXISTS Authors (id INTEGER PRIMARY KEY, name VARCHAR(100) NOT NULL UNIQUE," +
