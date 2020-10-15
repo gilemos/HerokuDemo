@@ -17,7 +17,7 @@ public class Application {
 
     public static void main(String[] args) {
         port(getHerokuAssignedPort());
-        get("/", (req, res) -> "Hi Heroku 3!");
+        get("/", (req, res) -> "Hi Heroku!");
         workWithDatabase();
     }
 
